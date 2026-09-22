@@ -1,39 +1,18 @@
-# Short HW1 Notes
+# Short HMW 1 Part 1
 
-## Linear regression
-Draws best straight line through data points
-Intercept = where line starts (X=0)
-Slope = how much Y changes per 1 unit of X
-Slope near 0 = no real effect
+Does being smarter (IQ) have any real effect on how diligent someone is? 
+Using survey data from School A.
 
-## H0 vs H1
-H0 = no relationship (slope = 0)
-H1 = there is a relationship
-Test checks if data gives evidence against H0
+This is really a question about whether two variables are related, and linear regression is the tool for testing that.
 
-## p-value
-Small p (<0.05) = reject H0, relationship is real
-Big p = not enough evidence, could be random
+I'm fitting a linear regression model:
+Y_i = β0 + β1 * X_i + ε_i
 
-## Residuals
-residual = actual − predicted
-Small residual = good fit for that point
+Let X = IQ and Y = diligence. 
+β1 answers the Q (slope), i.e. how much diligence 
+changes per unit of IQ. If β1 is basically zero, IQ and diligence 
+aren't related. If it's clearly nonzero, they are.
 
-## Why check residuals are normal
-Regression test assumes residuals are normal
-If not normal, p-value less trustworthy
-Probplot: points on straight line = normal. Curvy = not normal
-
-## Confidence interval
-Range that probably contains true slope
-Narrower = more precise
-More data (combining schools) should narrow it
-
-## Why schools might not match
-Different sample each time, so some difference expected by chance
-Selectivity might also affect who's actually in each dataset
-
-## Key words
-sample = one school's data
-population = everyone we're trying to learn about
-selectivity = how hard school is to get into
+Any sample of data will produce some slope. Typically this is too noisy. So I am using Hypothesis testing further.
+- H0: β1 = 0: no real relationship, whatever slope I see is noise
+- H1: β1 ≠ 0: there's a genuine relationship
