@@ -1,1 +1,1 @@
-# MAT3373-Machine-Learning-Notes
+# Machine-Learning-Notes
